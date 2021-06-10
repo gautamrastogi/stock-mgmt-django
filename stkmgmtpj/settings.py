@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'stockmgmt',
     'registration',
@@ -146,4 +145,4 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 REGISTRATION_OPEN = True          
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
