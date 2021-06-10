@@ -1,3 +1,3 @@
-web: gunicorn stockmgmtpj:application --log-file - --log-level debug
+web: gunicorn stkmgmtpj:application --log-file - --log-level debug
 python manage.py collectstatic --noinput
 manage.py migrate
