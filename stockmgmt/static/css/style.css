@@ -1,0 +1,144 @@
+body {
+    background-image: url("../img/bg.png");
+}
+
+nav .navbar-nav li a{
+  color: black; !important;
+ }
+.table{
+	font-size: 13px;
+	text-align: center;
+	width: 95%;
+	margin: auto;
+	text-align: center;
+/*    background-image:url("../img/bg.png");*/
+}
+.theme {
+  background-image: url("../img/cool.png");
+
+}
+
+/*.table tr:nth-child(odd){
+	background: #b5e7a0;
+}
+
+.table tr:nth-child(even){
+	background: #d5e1df;
+}*/
+
+th {
+  background-color: #337ab7;
+  color: black;
+}
+
+.display_table{
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 20px;
+	box-shadow: 12px 12px 10px #2e6da4;
+    background-image:url("../img/cool.png");
+}
+
+.header {
+    font-family: helvetica;
+    color: #82b74b;
+    font-size: 50px;
+    text-align: center;
+    width: 100%;
+    text-shadow: 6px 6px 6px #c9c6c6;
+    display: block;
+    font-weight: bolder;
+}
+
+
+/* Version Button */
+#version-display{
+    background-color: #ff4d4d;
+    color: white;
+    box-shadow: 5px 12px 12px #2e6da4;
+    text-align: center;
+    display: inline;
+    font-weight: bolder;
+    padding: 15px;
+    position: fixed;
+    top: 60px;
+    left: -5px;
+    z-index: 3000;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+
+ /* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #ff4d4d;
+    color: black;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #ff4d4d;
+    color: black;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    background-image: url("../img/bg2.png");
+    color: black;
+
+}
+
+
+.dev-info{
+    width: 50%;
+    text-align: center;
+    font-family: helvetica;
+    font-weight: bold;
+    display: inline;
+    color: black;
+}
+
+.dev-info-logo{
+    width: 50px;
+    float: left;
+}
+
+
+/*Table paination styling*/
+.paging-nav {
+  text-align: right;
+  padding-top: 2px;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.paging-nav a {
+  margin: auto 1px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px 7px;
+  background: #3287a8;
+  color: white;
+  border-radius: 100px;
+}
+
+.paging-nav .selected-page {
+  font-weight: bold;
+  color: #dc3545;
+}
+/* End Table paination styling*/

@@ -1,0 +1,69 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-transparent">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Stock Mgmt</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        {% url 'home' as url %}
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == url %}active{% endif %}" href="{% url 'home' %}">Home</a>
+        </li>
+        {% if request.user.is_authenticated %}
+        {% url 'list_items' as url %}
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == url %}active{% endif %}" href="{% url 'list_items' %}">List Item</a>
+        </li>
+        {% url 'add_items' as url %}
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == url %}active{% endif %}" href="{% url 'add_items' %}">Add Item</a>
+        </li>
+        {% url 'list_history' as url %}
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == url %}active{% endif %}" href="{% url 'list_history' %}">List History</a>
+        </li>
+        {% endif %}
+      </ul>
+        <ul class="navbar-nav">
+          {% if request.user.is_authenticated %}
+            <li><a href="/logout"><button class="btn btn-danger">{{ user }} | Logout</button></a></li>
+          {% else %}
+            <li><a href="/login" class="btn btn-primary">Login</a></li>
+          {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<button type="button" id="version-display" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  SMIS Ver: 1.0
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">System Information</h5>
+      </div>
+      <div class="modal-body">
+        <div class="dev-info">
+                      <p class=""><b>STOCK MANAGEMENT INFORMATION SYSTEMS</b></p>
+                      <p>VERSION: 1.O</p><br>
+
+                      <p class="modal-header">DEVELOPER:</p>
+                      <p>TRIPPY</p>
+                      <p>PSYENTIST</p>
+                      <a href="https://github.com/gautamrastogi" target="_blank">
+                      <p><img src="{% static 'img/lg.png' %}" width="150" height="150"></p></a>            
+                    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

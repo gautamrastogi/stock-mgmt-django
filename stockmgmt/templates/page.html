@@ -1,0 +1,44 @@
+<nav aria-label="Page navigation example">
+        <ul class="pagination pagination-circle pg-blue justify-content-center">
+        {% if queryset.has_previous %}
+            <li class="page-item">
+            <a class="page-link" href="?page={{ queryset.previous_page_number }}">Previous</a>
+          </li>
+        {% else %}
+            <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+        {% endif %}
+
+        {% if queryset.number|add:'-4' > 1 %}
+            <li class="page-item"><a class="page-link" href="?page={{ queryset.number|add:'-5' }}">&hellip;</a></li>
+        {% endif %}
+
+        {% for i in queryset.paginator.page_range %}
+            {% if queryset.number == i %}
+                <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            {% elif i > queryset.number|add:'-5' and i < queryset.number|add:'5' %}
+                 <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if queryset.paginator.num_pages > queryset.number|add:'4' %}
+           <li class="page-item"><a class="page-link" href="?page={{ queryset.number|add:'5' }}">&hellip;</a></li>
+        {% endif %}
+
+        {% if queryset.has_next %}
+            <li class="page-item">
+            <a class="page-link" href="?page={{ queryset.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+            <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
