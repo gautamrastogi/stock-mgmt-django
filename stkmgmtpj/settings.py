@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p5pv0*s8nb^d2m1xfp(2r^1-32$#&z(ra9lk-km5l77uhh@1vj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', "gautamrastogi-stock-mgmt-django.zeet.app"]
 
 
 # Application definition
